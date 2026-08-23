@@ -1,58 +1,200 @@
-<main>
-  <section class="intro section">
-    <div class="section-tag">01 · OUR BOND</div>
-    <h2>Because a simple message wasn't enough...</h2>
-    <p>
-      Some relationships don't fit into a paragraph. They're made from
-      silly fights, secret jokes, shared snacks, late-night conversations,
-      embarrassing photos and memories that only we understand.
-    </p>
-    <div class="quote-card">
-      <span>“</span>
-      No matter how much we fight, you're still one of my favourite people.
-      <small>— always your sibling ❤️</small>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Sibling Story 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <section class="letter section">
-    <div class="section-tag">02 · A LITTLE MESSAGE</div>
-    <div class="letter-card">
-      <div class="letter-top">💌</div>
-      <h2>Dear Sibling,</h2>
-      <p>
-        We may fight over the smallest things, steal each other's food,
-        expose embarrassing secrets and pretend we don't care...
-      </p>
-      <p>
-        But underneath all that chaos is something I would never trade:
-        having you in my life.
-      </p>
-      <p>
-        Thank you for all the laughs, support, memories and completely
-        unnecessary arguments. Wherever life takes us, I hope you always
-        know that I'll be there for you.
-      </p>
-      <p class="signature">
-        Love you always,<br>
-        <strong>Your annoying sibling 💖</strong>
-      </p>
-    </div>
-  </section>
+<body>
 
-  <section class="surprise section">
-    <div class="section-tag">03 · ONE LAST THING</div>
-    <h2>I have a tiny surprise...</h2>
-    <button id="surpriseBtn" class="primary-btn">Don't click 👀</button>
+  <div class="floating-hearts" aria-hidden="true"></div>
 
-    <div id="surpriseBox" class="surprise-box hidden">
-      <div class="big-heart">💗</div>
-      <h3>You're stuck with me forever!</h3>
-      <p>
-        No returns. No exchanges. Lifetime sibling subscription activated. 😂
+  <!-- HERO SECTION -->
+  <header class="hero">
+
+    <nav>
+      <div class="brand">💝 OUR BOND</div>
+    </nav>
+
+    <div class="hero-content">
+
+      <p class="eyebrow">
+        A little website made with a lot of love
       </p>
-      <button class="secondary-btn" onclick="celebrate()">
-        Celebrate Us 🎉
+
+      <h1>
+        Happy <span>Raksha Bandhan</span> 💕
+      </h1>
+
+      <p class="subtitle">
+        To my favourite partner in crime, my forever teammate,
+        and the person who somehow manages to annoy me and make me smile
+        at the same time.
+      </p>
+
+      <button
+        class="primary-btn"
+        onclick="scrollToSection('letter')">
+        Open Our Story ↓
       </button>
+
     </div>
-  </section>
-</main>
+
+    <div class="scroll-hint">
+      scroll to explore ✨
+    </div>
+
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- 01 · OUR BOND -->
+    <section class="intro section">
+
+      <div class="section-tag">
+        01 · OUR BOND
+      </div>
+
+      <h2>
+        Because a simple message wasn't enough...
+      </h2>
+
+      <p>
+        Some relationships don't fit into a paragraph. They're made from
+        silly fights, secret jokes, shared snacks, late-night conversations,
+        embarrassing photos and memories that only we understand.
+      </p>
+
+      <div class="quote-card">
+
+        <span>“</span>
+
+        No matter how much we fight, you're still one of my favourite people.
+
+        <small>
+          — always your sibling ❤️
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- 02 · A LITTLE MESSAGE -->
+    <section id="letter" class="letter section">
+
+      <div class="section-tag">
+        02 · A LITTLE MESSAGE
+      </div>
+
+      <div class="letter-card">
+
+        <div class="letter-top">
+          💌
+        </div>
+
+        <h2>
+          Dear Sibling,
+        </h2>
+
+        <p>
+          We may fight over the smallest things, steal each other's food,
+          expose embarrassing secrets and pretend we don't care...
+        </p>
+
+        <p>
+          But underneath all that chaos is something I would never trade:
+          having you in my life.
+        </p>
+
+        <p>
+          Thank you for all the laughs, support, memories and completely
+          unnecessary arguments. Wherever life takes us, I hope you always
+          know that I'll be there for you.
+        </p>
+
+        <p class="signature">
+          Love you always,<br>
+          <strong>Your annoying sibling 💖</strong>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 03 · ONE LAST THING -->
+    <section class="surprise section">
+
+      <div class="section-tag">
+        03 · ONE LAST THING
+      </div>
+
+      <h2>
+        I have a tiny surprise...
+      </h2>
+
+      <button
+        id="surpriseBtn"
+        class="primary-btn">
+        Don't click 👀
+      </button>
+
+      <div
+        id="surpriseBox"
+        class="surprise-box hidden">
+
+        <div class="big-heart">
+          💗
+        </div>
+
+        <h3>
+          You're stuck with me forever!
+        </h3>
+
+        <p>
+          No returns. No exchanges. Lifetime sibling subscription activated. 😂
+        </p>
+
+        <button
+          class="secondary-btn"
+          onclick="celebrate()">
+          Celebrate Us 🎉
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      Made with ❤️, memories & a little bit of sibling chaos.
+    </p>
+
+    <p class="tiny">
+      Happy Raksha Bandhan ✨
+    </p>
+
+  </footer>
+
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgMusic" loop>
+    <!-- Add your own MP3 URL/file here -->
+  </audio>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
