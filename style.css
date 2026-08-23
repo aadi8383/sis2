@@ -307,3 +307,16 @@ footer .tiny { color: #ffadc8; margin-top: 8px; }
   .section { padding: 75px 0; }
   .quote-card { padding: 35px 25px; font-size: 1.4rem; }
 }
+/* ===== MEMORY PHOTOS ===== */
+
+.memory-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.memory-card:hover .memory-photo {
+  transform: scale(1.05);
+}
