@@ -1,58 +1,147 @@
+// ===============================
+// SMOOTH SCROLL
+// ===============================
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+}
+
+
+// ===============================
+// SURPRISE BUTTON
+// ===============================
+
 const surpriseBtn = document.getElementById("surpriseBtn");
 const surpriseBox = document.getElementById("surpriseBox");
-const musicBtn = document.getElementById("musicBtn");
-const bgMusic = document.getElementById("bgMusic");
 
-surpriseBtn.addEventListener("click", () => {
-  surpriseBox.classList.remove("hidden");
-  surpriseBtn.style.display = "none";
-  celebrate();
-});
+if (surpriseBtn && surpriseBox) {
 
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  surpriseBtn.addEventListener("click", function () {
+
+    surpriseBox.classList.toggle("hidden");
+
+    if (!surpriseBox.classList.contains("hidden")) {
+
+      surpriseBtn.textContent = "Aww! 💕";
+
+      surpriseBox.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    } else {
+
+      surpriseBtn.textContent = "Don't click 👀";
+
+    }
+
+  });
+
 }
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "floating-heart";
-  heart.textContent = ["💗", "💖", "💕", "💝", "✨"][Math.floor(Math.random() * 5)];
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (16 + Math.random() * 24) + "px";
-  heart.style.animationDuration = (4 + Math.random() * 3) + "s";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 7000);
-}
+
+// ===============================
+// CELEBRATE
+// ===============================
 
 function celebrate() {
-  for (let i = 0; i < 35; i++) {
-    setTimeout(createHeart, i * 55);
+
+  createHearts(25);
+
+  const button = document.querySelector(".secondary-btn");
+
+  if (button) {
+    button.textContent = "Love You! ❤️";
   }
+
 }
 
-musicBtn.addEventListener("click", () => {
-  if (!bgMusic.src) {
-    alert("Add your own MP3 file/URL to the <audio id=\"bgMusic\"> element in index.html first.");
-    return;
+
+// ===============================
+// FLOATING HEARTS
+// ===============================
+
+function createHeart() {
+
+  const heart = document.createElement("div");
+
+  heart.classList.add("floating-heart");
+
+  const hearts = [
+    "💗",
+    "💕",
+    "💖",
+    "💓",
+    "💞",
+    "❤️",
+    "💝"
+  ];
+
+  heart.textContent =
+    hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (Math.random() * 20 + 15) + "px";
+
+  heart.style.animationDuration =
+    (Math.random() * 3 + 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
+
+}
+
+
+// ===============================
+// CREATE MANY HEARTS
+// ===============================
+
+function createHearts(amount) {
+
+  for (let i = 0; i < amount; i++) {
+
+    setTimeout(() => {
+      createHeart();
+    }, i * 100);
+
   }
 
-  if (bgMusic.paused) {
-    bgMusic.play();
-    musicBtn.textContent = "🔇 Pause";
-  } else {
-    bgMusic.pause();
-    musicBtn.textContent = "🎵 Music";
-  }
-});
+}
 
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".memory-card, .timeline-item, .letter-card").forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * .88) {
-      el.style.opacity = "1";
-      el.style.transform = el.classList.contains("featured")
-        ? "translateY(-18px)"
-        : "translateY(0)";
-    }
-  });
-});
+
+// ===============================
+// AUTOMATIC FLOATING HEARTS
+// ===============================
+
+setInterval(() => {
+
+  if (Math.random() > 0.35) {
+    createHeart();
+  }
+
+}, 1200);
+
+
+// ===============================
+// OPTIONAL BACKGROUND MUSIC
+// ===============================
+
+const bgMusic = document.getElementById("bgMusic");
+
+if (bgMusic) {
+
+  bgMusic.volume = 0.35;
+
+}
